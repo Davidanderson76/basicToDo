@@ -1,1 +1,24 @@
-<p>HOME PAGE</p>
+<h2>Welcome {{loggedInUser.userName}}!</h2>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile
+    ><button mat-raised-button color="primary" (click)="openBottomSheet()">
+      Recent ToDo's
+    </button>
+  </mat-grid-tile>
+  <mat-grid-tile
+    ><button mat-raised-button color="primary" (click)="openBottomSheet()">
+      Completed ToDo's
+    </button></mat-grid-tile
+  >
+  <mat-grid-tile
+    ><button mat-raised-button color="primary" (click)="addNewTodo()">
+      Add New ToDo
+    </button></mat-grid-tile
+  >
+  <mat-grid-tile
+    ><button mat-raised-button color="primary" (click)="openBottomSheet()">
+      Recent Messages
+    </button></mat-grid-tile
+  >
+</mat-grid-list>

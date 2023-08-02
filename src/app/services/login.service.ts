@@ -15,11 +15,19 @@ export class LoginService {
         password: '123',
         verifyPassword: '123',
         userExists: true,
+        toDos: [],
       },
     ],
   };
 
   loggedIn: boolean = false;
+  activeUser: User = {
+    userName: '',
+    password: '',
+    verifyPassword: '',
+    userExists: false,
+    toDos: [],
+  };
 
   loggedInStatus$ = new BehaviorSubject<boolean>(this.loggedIn);
 
@@ -55,7 +63,7 @@ export class LoginService {
     }
   }
 
-  addUser(input: User) {
+  addUser(input: User): void {
     this.userDb.users.push(input);
   }
 
@@ -63,8 +71,16 @@ export class LoginService {
     return this.loggedIn;
   }
 
-  setIsUserLoggedIn(input: boolean) {
+  setIsUserLoggedIn(input: boolean): void {
     this.loggedIn = input;
     this.loggedInStatus$.next(input);
+  }
+
+  setUser(input: User): void {
+    this.activeUser = input;
+  }
+
+  getUser(): User {
+    return this.activeUser;
   }
 }

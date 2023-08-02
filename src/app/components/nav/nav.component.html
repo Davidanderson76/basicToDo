@@ -12,6 +12,10 @@
     <button mat-menu-item (click)="goToToDo()">
       <mat-icon>whatshot</mat-icon>ToDo's
     </button>
+    <button mat-menu-item (click)="goMessages()">
+      <mat-icon>sms</mat-icon>Messages
+    </button>
+
     <div *ngIf="showSignOut">
       <button mat-menu-item (click)="signOut()">
         <mat-icon>subdirectory_arrow_left</mat-icon>Sign Out

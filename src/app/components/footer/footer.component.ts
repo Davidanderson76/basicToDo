@@ -42,6 +42,15 @@ export class FooterComponent {
     }
   }
 
+  goMessages() {
+    if (this.loginService.isUserLoggedIn()) {
+      this.router.navigate(['/home'], { skipLocationChange: true });
+    } else {
+      this.router.navigate(['/signin'], { skipLocationChange: true });
+      this.openSnackBar('Please sign in.', 'SIGN IN');
+    }
+  }
+
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
   }

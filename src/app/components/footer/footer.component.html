@@ -22,8 +22,17 @@
     mat-icon-button
     class="example-icon"
     aria-label="icon-button with share icon"
+    (click)="goMessages()"
+  >
+    <mat-icon>sms</mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="icon-button with share icon"
     (click)="goProfile()"
   >
-    <mat-icon>favorite</mat-icon>
+    <mat-icon>person</mat-icon>
   </button>
 </mat-toolbar>

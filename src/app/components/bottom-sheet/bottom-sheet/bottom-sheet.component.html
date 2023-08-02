@@ -1,0 +1,6 @@
+<mat-nav-list *ngFor="let todo of recentToDos">
+  <a mat-list-item (click)="openLink($event, todo)">
+    <span matListItemTitle>{{todo.title}}</span>
+    <span matLine>{{todo.description}}</span>
+  </a>
+</mat-nav-list>

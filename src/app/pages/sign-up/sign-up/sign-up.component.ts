@@ -36,10 +36,12 @@ export class SignUpComponent {
       verifyPassword: this.verifyPassword,
       email: this.email,
       userExists: true,
+      toDos: [],
     };
     if (!this.loginService.verifyUser(user)) {
       this.loginService.addUser(user);
       this.loginService.setIsUserLoggedIn(true);
+      this.loginService.setUser(user);
       this.router.navigate(['/home'], { skipLocationChange: true });
     } else {
       this.openSnackBar('Profile already exists', 'SIGN IN');

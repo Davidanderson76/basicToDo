@@ -21,9 +21,11 @@ export class SignInComponent {
       password: this.password,
       verifyPassword: this.password,
       userExists: true,
+      toDos: [],
     };
     if (this.loginService.verifyUser(user)) {
       this.loginService.setIsUserLoggedIn(true);
+      this.loginService.setUser(user);
       this.router.navigate(['/home'], { skipLocationChange: true });
     } else {
       this.loginFail = true;

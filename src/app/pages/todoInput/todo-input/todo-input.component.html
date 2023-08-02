@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <h1>Create a ToDo!</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <form class="form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          placeholder="Enter todo title"
+          name="usename"
+          [(ngModel)]="title"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <input
+          matInput
+          placeholder="Enter todo description"
+          name="usename"
+          [(ngModel)]="description"
+        />
+      </mat-form-field>
+
+      <br />
+      <span *ngIf="loginFail">
+        <button mat-button color="accent">Please try again...</button></span
+      >
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="create-options">
+    <button mat-raised-button color="primary" (click)="submit()">
+      <mat-icon>check</mat-icon>Create
+    </button>
+    <button mat-raised-button color="warn" (click)="clear()">
+      <mat-icon>sync</mat-icon> Clear Fields
+    </button>
+  </mat-card-actions>
+</mat-card>

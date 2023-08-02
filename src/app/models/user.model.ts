@@ -1,3 +1,5 @@
+import { ToDo } from './todos.model';
+
 export interface User {
   id?: number;
   userName: string;
@@ -5,6 +7,7 @@ export interface User {
   password: string;
   verifyPassword: string;
   userExists: boolean;
+  toDos: Array<ToDo>;
 }
 
 export interface UsersCollection {

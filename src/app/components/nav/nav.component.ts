@@ -49,6 +49,15 @@ export class NavComponent implements OnInit {
     }
   }
 
+  goMessages() {
+    if (this.loginService.isUserLoggedIn()) {
+      this.router.navigate(['/home'], { skipLocationChange: true });
+    } else {
+      this.router.navigate(['/signin'], { skipLocationChange: true });
+      this.openSnackBar('Please sign in.', 'SIGN IN');
+    }
+  }
+
   signOut() {
     if (this.loginService.isUserLoggedIn()) {
       this.loginService.setIsUserLoggedIn(false);

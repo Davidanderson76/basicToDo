@@ -20,6 +20,8 @@ import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
   MatSnackBarModule,
 } from '@angular/material/snack-bar';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatListModule } from '@angular/material/list';
 
 import { HomeComponent } from './pages/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -27,6 +29,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SignInComponent } from './pages/signIn/sign-in/sign-in.component';
 import { LoginService } from './services/login.service';
 import { SignUpComponent } from './pages/sign-up/sign-up/sign-up.component';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet/bottom-sheet.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { TodoInputComponent } from './pages/todoInput/todo-input/todo-input.component';
+import { TodoService } from './services/todo.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +42,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up/sign-up.component';
     FooterComponent,
     SignInComponent,
     SignUpComponent,
+    BottomSheetComponent,
+    TodoInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,9 +61,13 @@ import { SignUpComponent } from './pages/sign-up/sign-up/sign-up.component';
     MatInputModule,
     FormsModule,
     MatSnackBarModule,
+    MatBottomSheetModule,
+    MatListModule,
+    MatGridListModule,
   ],
   providers: [
     LoginService,
+    TodoService,
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 } },
   ],
   bootstrap: [AppComponent],

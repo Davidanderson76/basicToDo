@@ -1,0 +1,14 @@
+.create-options {
+  justify-content: space-evenly;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.intro-message {
+  font-size: medium;
+}
+
+.form {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
