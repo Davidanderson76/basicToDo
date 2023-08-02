@@ -1,24 +1,31 @@
 import { Injectable } from '@angular/core';
-import { User, UsersCollection } from '../models/user.model';
+import { User } from '../models/user.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  userDb: UsersCollection = {
-    users: [
-      {
-        id: 1,
-        userName: 'davidanderson76',
-        email: 'david.anderson1993@gmail.com',
-        password: '123',
-        verifyPassword: '123',
-        userExists: true,
-        toDos: [],
-      },
-    ],
-  };
+  userDb: User[] = [
+    {
+      id: 1,
+      userName: 'davidanderson76',
+      email: 'david.anderson1993@gmail.com',
+      password: '123',
+      verifyPassword: '123',
+      userExists: true,
+      toDos: [],
+    },
+    {
+      id: 2,
+      userName: 'gary76',
+      email: 'david.anderson1993@gmail.com',
+      password: '123',
+      verifyPassword: '123',
+      userExists: true,
+      toDos: [],
+    },
+  ];
 
   loggedIn: boolean = false;
   activeUser: User = {
@@ -34,7 +41,7 @@ export class LoginService {
   constructor() {}
 
   checkId(id: number): any {
-    for (const member of this.userDb.users) {
+    for (const member of this.userDb) {
       if (member.id === id) {
         return true;
       } else {
@@ -45,11 +52,11 @@ export class LoginService {
 
   verifyUser(input: User): any {
     if (input.userExists && input.password === input.verifyPassword) {
-      for (const member of this.userDb.users) {
+      for (let member of this.userDb) {
+        console.log(member);
         if (
           input.userName === member.userName &&
           input.password === member.password &&
-          input.password === input.verifyPassword &&
           input.userName.length > 0 &&
           input.password.length > 0
         ) {
@@ -64,7 +71,7 @@ export class LoginService {
   }
 
   addUser(input: User): void {
-    this.userDb.users.push(input);
+    this.userDb.push(input);
   }
 
   isUserLoggedIn(): boolean {

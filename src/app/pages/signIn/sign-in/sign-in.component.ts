@@ -24,6 +24,7 @@ export class SignInComponent {
       toDos: [],
     };
     if (this.loginService.verifyUser(user)) {
+      console.log(user);
       this.loginService.setIsUserLoggedIn(true);
       this.loginService.setUser(user);
       this.router.navigate(['/home'], { skipLocationChange: true });

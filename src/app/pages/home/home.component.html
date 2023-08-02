@@ -1,6 +1,10 @@
-<h2>Welcome {{loggedInUser.userName}}!</h2>
+<mat-card>
+  <mat-card-content>
+    <h2>Welcome {{loggedInUser.userName}}!</h2>
 
-<p>You have {{toDoCount}} current toDos</p>
+    <p><em>You have {{toDoCount}} current toDos</em></p>
+  </mat-card-content>
+</mat-card>
 
 <mat-grid-list cols="2" rowHeight="2:1">
   <mat-grid-tile
