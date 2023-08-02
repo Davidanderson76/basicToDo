@@ -3,9 +3,20 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item><mat-icon>home</mat-icon></button>
-    <button mat-menu-item>Profile</button>
-    <button mat-menu-item>ToDo's</button>
+    <button mat-menu-item (click)="goHome()">
+      <mat-icon>home</mat-icon>Home
+    </button>
+    <button mat-menu-item (click)="goProfile()">
+      <mat-icon>person</mat-icon> Profile
+    </button>
+    <button mat-menu-item (click)="goToToDo()">
+      <mat-icon>whatshot</mat-icon>ToDo's
+    </button>
+    <div *ngIf="showSignOut">
+      <button mat-menu-item (click)="signOut()">
+        <mat-icon>subdirectory_arrow_left</mat-icon>Sign Out
+      </button>
+    </div>
   </mat-menu>
   <span class="title">ToDo</span>
 </mat-toolbar>

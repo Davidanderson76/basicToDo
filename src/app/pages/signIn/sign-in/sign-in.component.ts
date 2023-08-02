@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from 'src/app/models/user.model';
+import { User } from '../../../models/user.model';
 import { LoginService } from '../../../services/login.service';
 import { Router } from '@angular/router';
 
@@ -27,7 +27,7 @@ export class SignInComponent {
       this.router.navigate(['/home'], { skipLocationChange: true });
     } else {
       this.loginFail = true;
-      this.loginService.setIsUserLoggedIn(true);
+      this.loginService.setIsUserLoggedIn(false);
     }
     this.clear();
   }

@@ -16,6 +16,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import {
+  MAT_SNACK_BAR_DEFAULT_OPTIONS,
+  MatSnackBarModule,
+} from '@angular/material/snack-bar';
 
 import { HomeComponent } from './pages/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -48,8 +52,12 @@ import { SignUpComponent } from './pages/sign-up/sign-up/sign-up.component';
     MatButtonModule,
     MatInputModule,
     FormsModule,
+    MatSnackBarModule,
   ],
-  providers: [LoginService],
+  providers: [
+    LoginService,
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 } },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

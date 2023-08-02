@@ -1,1 +1,67 @@
-<p>sign-up works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <h1>Sign up for ToDo!</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="intro-message">Start crossing items off of that to do list.</p>
+    <mat-divider></mat-divider>
+    <form class="form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter your name"
+          name="usename"
+          [(ngModel)]="username"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Enter your email"
+          name="usename"
+          [(ngModel)]="email"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Enter your password"
+          value=""
+          name="password"
+          type="password"
+          [(ngModel)]="password"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Verify Password</mat-label>
+        <input
+          matInput
+          placeholder="Verify your password"
+          value=""
+          name="password"
+          type="password"
+          [(ngModel)]="verifyPassword"
+        />
+      </mat-form-field>
+
+      <br />
+      <span *ngIf="loginFail">
+        <button mat-button color="accent">Please try again...</button></span
+      >
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="sign-in-options">
+    <button mat-raised-button color="primary" (click)="submit()">
+      <mat-icon>verified_user</mat-icon>Register
+    </button>
+    <button mat-raised-button color="warn" (click)="clear()">
+      <mat-icon>sync</mat-icon> Clear Fields
+    </button>
+  </mat-card-actions>
+</mat-card>
