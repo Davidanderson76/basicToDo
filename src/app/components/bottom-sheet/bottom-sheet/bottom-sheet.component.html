@@ -1,6 +1,9 @@
+<div *ngIf="recentToDos.length > 0;else noToDo"></div>
 <mat-nav-list *ngFor="let todo of recentToDos">
   <a mat-list-item (click)="openLink($event, todo)">
-    <span matListItemTitle>{{todo.title}}</span>
-    <span matLine>{{todo.description}}</span>
+    <span matListItemTitle><strong>Title:</strong> {{todo.title}}</span>
+    <span matLine><strong>Description:</strong> {{todo.description}}</span>
   </a>
 </mat-nav-list>
+
+<ng-template #noToDo>No ToDo's</ng-template>

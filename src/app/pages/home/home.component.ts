@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BottomSheetComponent } from '../../components/bottom-sheet/bottom-sheet/bottom-sheet.component';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-home',
@@ -19,16 +20,19 @@ export class HomeComponent implements OnInit {
     userExists: false,
     toDos: [],
   };
+  toDoCount: number = 0;
 
   constructor(
     private loginService: LoginService,
     private router: Router,
     private _snackBar: MatSnackBar,
-    private _bottomSheet: MatBottomSheet
+    private _bottomSheet: MatBottomSheet,
+    private todoService: TodoService
   ) {}
 
   ngOnInit(): void {
     this.loggedInUser = this.loginService.getUser();
+    this.toDoCount = this.todoService.getToDosCount();
   }
 
   openBottomSheet(): void {

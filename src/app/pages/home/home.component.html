@@ -1,5 +1,7 @@
 <h2>Welcome {{loggedInUser.userName}}!</h2>
 
+<p>You have {{toDoCount}} current toDos</p>
+
 <mat-grid-list cols="2" rowHeight="2:1">
   <mat-grid-tile
     ><button mat-raised-button color="primary" (click)="openBottomSheet()">

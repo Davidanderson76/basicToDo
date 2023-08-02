@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { ToDo } from '../../../models/todos.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-bottom-sheet',
@@ -13,7 +14,8 @@ export class BottomSheetComponent implements OnInit {
 
   constructor(
     private _bottomSheetRef: MatBottomSheetRef<BottomSheetComponent>,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private todoService: TodoService
   ) {}
 
   openSnackBar(message: string, action: string) {
@@ -32,25 +34,6 @@ export class BottomSheetComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.recentToDos = [
-      {
-        id: 1,
-        title: 'ToDo Title',
-        description: 'ToDo Description',
-        isComplete: false,
-      },
-      {
-        id: 2,
-        title: 'ToDo Title',
-        description: 'ToDo Description',
-        isComplete: false,
-      },
-      {
-        id: 3,
-        title: 'ToDo Title',
-        description: 'ToDo Description',
-        isComplete: true,
-      },
-    ];
+    this.recentToDos = this.todoService.getToDos();
   }
 }
