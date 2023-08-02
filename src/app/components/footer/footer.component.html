@@ -1,0 +1,29 @@
+<span *ngIf="show"> <button mat-button color="accent">SIGN IN</button></span>
+
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+<mat-toolbar color="primary" class="footer">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    (click)="goHome()"
+  >
+    <mat-icon fontIcon="home"> </mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>assignment</mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>favorite</mat-icon>
+  </button>
+</mat-toolbar>

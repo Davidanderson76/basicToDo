@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="mat-typography mat-app-background">
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item><mat-icon>home</mat-icon></button>
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>ToDo's</button>
+  </mat-menu>
+  <span class="title">ToDo</span>
+</mat-toolbar>

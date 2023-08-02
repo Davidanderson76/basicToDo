@@ -1,0 +1,43 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <h1>Welcome to ToDo!</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="intro-message">Start crossing items off of that to do list.</p>
+    <mat-divider></mat-divider>
+    <form class="form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter your name"
+          name="usename"
+          [(ngModel)]="username"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Enter your password"
+          value=""
+          name="password"
+          type="password"
+          [(ngModel)]="password"
+        />
+      </mat-form-field>
+      <br />
+      <span *ngIf="loginFail">
+        <button mat-button color="accent">Please try again...</button></span
+      >
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="sign-in-options">
+    <button mat-raised-button color="primary" (click)="submit()">
+      <mat-icon>verified_user</mat-icon>Sign In
+    </button>
+    <button mat-raised-button color="warn" (click)="signUp()">
+      <mat-icon>add</mat-icon> Sign Up
+    </button>
+  </mat-card-actions>
+</mat-card>
